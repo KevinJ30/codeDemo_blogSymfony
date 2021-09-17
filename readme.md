@@ -17,7 +17,6 @@ Création d'une démo d'un blog avec un système de newsletter, mise en place de
 
 ## Fonctionnalités
 
----
 ### Fonctionnalités générales
 - Affichages des différents article du blog
 - Affichages des articles par catégorie
