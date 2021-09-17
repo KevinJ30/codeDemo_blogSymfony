@@ -45,6 +45,12 @@ class Post
     private ?\DateTimeImmutable $publish;
 
     /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private ?Category $category;
+
+    /**
      * Getters & Setters
      **/
     public function getId(): ?int
@@ -107,6 +113,17 @@ class Post
     public function setPublish(?\DateTimeImmutable $publish): self
     {
         $this->publish = $publish;
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
         return $this;
     }
 }

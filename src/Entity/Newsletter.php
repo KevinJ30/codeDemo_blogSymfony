@@ -15,12 +15,17 @@ class Newsletter
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="datetime_immutable")
      */
-    private $registration;
+    private ?\DateTimeImmutable $registration;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private string $email;
 
     public function getId(): ?int
     {
@@ -35,6 +40,18 @@ class Newsletter
     public function setRegistration(\DateTimeImmutable $registration): self
     {
         $this->registration = $registration;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
