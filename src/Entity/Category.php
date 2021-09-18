@@ -34,7 +34,7 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="category")
      */
-    private ArrayCollection $posts;
+    private $posts;
 
     public function __construct()
     {

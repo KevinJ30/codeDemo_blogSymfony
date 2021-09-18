@@ -50,6 +50,11 @@ class Post
      */
     private ?Category $category;
 
+    public function __construct() {
+        $this->setCreatedAt(new \DateTimeImmutable());
+        $this->setUpdatedAt(new \DateTimeImmutable());
+    }
+
     /**
      * Getters & Setters
      **/
