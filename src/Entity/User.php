@@ -9,6 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Utilisateur du back-office
+ * La création se fait avec le role membre par défaut
  *
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
@@ -36,6 +37,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private string $password;
+
+    public function __construct() {
+        $this->setRoles(['member']);
+    }
 
     /**
      * Getters & Setters

@@ -9,13 +9,18 @@ use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
 /**
- * Ajoute les entrées dans la base de données
+ * Enregistre les postes
  *
  * Class PostFixtures
  * @package App\DataFixtures
  **/
 class PostFixtures extends Fixture
 {
+    /**
+     * Enregistre 10 postes
+     *
+     * @param ObjectManager $manager
+     **/
     public function load(ObjectManager $manager)
     {
         for($i = 0; $i <= 10; $i++) {
@@ -26,7 +31,7 @@ class PostFixtures extends Fixture
     }
 
     /**
-     * Crée une entité générer avec Faker
+     * Crée un poste générer avec Faker
      *
      * @return Post
      */
